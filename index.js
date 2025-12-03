@@ -55,7 +55,7 @@ app.use('/api/history', historyRoutes);
 app.use('/api/collections', collectionsRoutes);
 
 // Health check
-app.get('/api/health', (req, res) => {
+app.get('/', (req, res) => {
   res.json({ status: 'OK', message: 'API Testing Tool Backend Running' });
 });
 
