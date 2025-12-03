@@ -29,7 +29,7 @@ app.post('/api/proxy', async (req, res) => {
   url,
   headers: headers || {},
   data: body,
-  timeout: 10000,
+  // timeout: 10000,
   withCredentials: true // <-- THIS IS REQUIRED
 });
 
@@ -40,6 +40,8 @@ app.post('/api/proxy', async (req, res) => {
       data: response.data
     });
   } catch (error) {
+    console.error("Proxy error:", error);
+
     res.status(500).json({
       error: error.message,
       status: error.response?.status
